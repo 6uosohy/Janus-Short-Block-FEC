@@ -1,0 +1,179 @@
+out = run_5fec_fhbfsk_campaign(cfg);
+
+############################################################
+#  5-FEC FH-BFSK CAMPAIGN  (UWA)                           #
+#  K=64, E=144, fs=44100 Hz, 25 SNR pts, 10000 fr/pt            #
+#  UWA: delays=[0        0.16        0.48], gains=[0  -6 -10] dB, rician K=6 dB        #
+############################################################
+
+[Phase 1] Building JANUS pset and codecs ...
+  pset: cfreq=11520 Hz, bw=3840 Hz, chip_frq=160.0 Hz, chip_dur=0.0063 s
+[build_ldpc_matrix_144_64] Constructing (144,64) LDPC, dv=3 ...
+  H: 80x144, rank=80, mean_row_wt=5.4, mean_col_wt=3.0
+  Conv:  K=64, E=144
+  Turbo: K=64, E=144, iter=6
+  LDPC:  K=64, E=144, max_iter=50
+  Polar: K=64, E=144, L=8, CRC=11
+  Adaptive: L0=4 -> Lmax=8
+
+[Phase 2] Noiseless FH-BFSK round-trip sanity check ...
+  FH-BFSK round-trip: PASS (10 trials)
+  Turbo LLR sign: FLIPPED
+  LDPC  LLR sign: normal
+
+========== [Mode 1/5] Conv (Viterbi) ==========
+  conv  Eb/N0= 8.00 dB | frames=   383 | BLER=7.8329e-01 | BER=2.6244e-01
+  conv  Eb/N0= 8.50 dB | frames=   421 | BLER=7.1259e-01 | BER=2.3233e-01
+  conv  Eb/N0= 9.00 dB | frames=   517 | BLER=5.8027e-01 | BER=1.8668e-01
+  conv  Eb/N0= 9.50 dB | frames=   608 | BLER=4.9342e-01 | BER=1.5252e-01
+  conv  Eb/N0=10.00 dB | frames=   750 | BLER=4.0000e-01 | BER=1.2206e-01
+  conv  Eb/N0=10.50 dB | frames=   874 | BLER=3.4325e-01 | BER=1.0065e-01
+  conv  Eb/N0=11.00 dB | frames=  1033 | BLER=2.9042e-01 | BER=8.1528e-02
+  conv  Eb/N0=11.50 dB | frames=  1283 | BLER=2.3383e-01 | BER=6.6677e-02
+  conv  Eb/N0=12.00 dB | frames=  1610 | BLER=1.8634e-01 | BER=5.1407e-02
+  conv  Eb/N0=12.50 dB | frames=  1857 | BLER=1.6155e-01 | BER=4.5722e-02
+  conv  Eb/N0=13.00 dB | frames=  1967 | BLER=1.5252e-01 | BER=4.1545e-02
+  conv  Eb/N0=13.50 dB | frames=  2694 | BLER=1.1136e-01 | BER=3.0270e-02
+  conv  Eb/N0=14.00 dB | frames=  2805 | BLER=1.0695e-01 | BER=3.0169e-02
+  conv  Eb/N0=14.50 dB | frames=  4060 | BLER=7.3892e-02 | BER=2.0532e-02
+  conv  Eb/N0=15.00 dB | frames=  3979 | BLER=7.5396e-02 | BER=2.0973e-02
+  conv  Eb/N0=15.50 dB | frames=  4505 | BLER=6.6593e-02 | BER=1.9111e-02
+  conv  Eb/N0=16.00 dB | frames=  4995 | BLER=6.0060e-02 | BER=1.8594e-02
+  conv  Eb/N0=16.50 dB | frames=  5314 | BLER=5.6455e-02 | BER=1.7286e-02
+  conv  Eb/N0=17.00 dB | frames=  5978 | BLER=5.0184e-02 | BER=1.4979e-02
+  conv  Eb/N0=17.50 dB | frames=  5657 | BLER=5.3032e-02 | BER=1.7213e-02
+  conv  Eb/N0=18.00 dB | frames=  6804 | BLER=4.4092e-02 | BER=1.2681e-02
+  conv  Eb/N0=18.50 dB | frames=  7111 | BLER=4.2188e-02 | BER=1.2681e-02
+  conv  Eb/N0=19.00 dB | frames=  7137 | BLER=4.2034e-02 | BER=1.2431e-02
+  conv  Eb/N0=19.50 dB | frames=  7235 | BLER=4.1465e-02 | BER=1.3005e-02
+  conv  Eb/N0=20.00 dB | frames=  7937 | BLER=3.7798e-02 | BER=1.1796e-02
+
+========== [Mode 2/5] Turbo (max-log-MAP) ==========
+  Turbo  Eb/N0= 8.00 dB | frames=   333 | BLER=9.0090e-01 | BER=1.6474e-01
+  Turbo  Eb/N0= 8.50 dB | frames=   397 | BLER=7.5567e-01 | BER=1.2909e-01
+  Turbo  Eb/N0= 9.00 dB | frames=   458 | BLER=6.5502e-01 | BER=1.1316e-01
+  Turbo  Eb/N0= 9.50 dB | frames=   541 | BLER=5.5453e-01 | BER=8.8031e-02
+  Turbo  Eb/N0=10.00 dB | frames=   678 | BLER=4.4248e-01 | BER=6.8653e-02
+  Turbo  Eb/N0=10.50 dB | frames=   832 | BLER=3.6058e-01 | BER=5.6735e-02
+  Turbo  Eb/N0=11.00 dB | frames=  1004 | BLER=2.9880e-01 | BER=4.5085e-02
+  Turbo  Eb/N0=11.50 dB | frames=  1157 | BLER=2.5929e-01 | BER=3.8610e-02
+  Turbo  Eb/N0=12.00 dB | frames=  1451 | BLER=2.0675e-01 | BER=3.1918e-02
+  Turbo  Eb/N0=12.50 dB | frames=  1633 | BLER=1.8371e-01 | BER=2.7097e-02
+  Turbo  Eb/N0=13.00 dB | frames=  2138 | BLER=1.4032e-01 | BER=2.0536e-02
+  Turbo  Eb/N0=13.50 dB | frames=  2498 | BLER=1.2010e-01 | BER=1.8283e-02
+  Turbo  Eb/N0=14.00 dB | frames=  2964 | BLER=1.0121e-01 | BER=1.6210e-02
+  Turbo  Eb/N0=14.50 dB | frames=  3598 | BLER=8.3380e-02 | BER=1.2963e-02
+  Turbo  Eb/N0=15.00 dB | frames=  4416 | BLER=6.7935e-02 | BER=1.0505e-02
+  Turbo  Eb/N0=15.50 dB | frames=  4885 | BLER=6.1412e-02 | BER=9.9188e-03
+  Turbo  Eb/N0=16.00 dB | frames=  4974 | BLER=6.0314e-02 | BER=9.8669e-03
+  Turbo  Eb/N0=16.50 dB | frames=  5370 | BLER=5.5866e-02 | BER=8.9415e-03
+  Turbo  Eb/N0=17.00 dB | frames=  5976 | BLER=5.0201e-02 | BER=8.3511e-03
+  Turbo  Eb/N0=17.50 dB | frames=  5884 | BLER=5.0986e-02 | BER=8.0117e-03
+  Turbo  Eb/N0=18.00 dB | frames=  6369 | BLER=4.7103e-02 | BER=7.6346e-03
+  Turbo  Eb/N0=18.50 dB | frames=  6927 | BLER=4.3309e-02 | BER=7.1595e-03
+  Turbo  Eb/N0=19.00 dB | frames=  7014 | BLER=4.2772e-02 | BER=7.1197e-03
+  Turbo  Eb/N0=19.50 dB | frames=  7832 | BLER=3.8304e-02 | BER=6.1566e-03
+  Turbo  Eb/N0=20.00 dB | frames=  8233 | BLER=3.6439e-02 | BER=6.1187e-03
+
+========== [Mode 3/5] LDPC (norm. min-sum) ==========
+  LDPC  Eb/N0= 8.00 dB | frames=   312 | BLER=9.6154e-01 | BER=1.7508e-01
+  LDPC  Eb/N0= 8.50 dB | frames=   343 | BLER=8.7464e-01 | BER=1.4368e-01
+  LDPC  Eb/N0= 9.00 dB | frames=   363 | BLER=8.2645e-01 | BER=1.2392e-01
+  LDPC  Eb/N0= 9.50 dB | frames=   431 | BLER=6.9606e-01 | BER=9.5273e-02
+  LDPC  Eb/N0=10.00 dB | frames=   486 | BLER=6.1728e-01 | BER=7.8961e-02
+  LDPC  Eb/N0=10.50 dB | frames=   567 | BLER=5.2910e-01 | BER=6.4897e-02
+  LDPC  Eb/N0=11.00 dB | frames=   633 | BLER=4.7393e-01 | BER=5.6823e-02
+  LDPC  Eb/N0=11.50 dB | frames=   721 | BLER=4.1609e-01 | BER=4.7157e-02
+  LDPC  Eb/N0=12.00 dB | frames=   842 | BLER=3.5629e-01 | BER=4.1122e-02
+  LDPC  Eb/N0=12.50 dB | frames=   964 | BLER=3.1120e-01 | BER=3.2060e-02
+  LDPC  Eb/N0=13.00 dB | frames=  1142 | BLER=2.6270e-01 | BER=2.8992e-02
+  LDPC  Eb/N0=13.50 dB | frames=  1423 | BLER=2.1082e-01 | BER=2.0939e-02
+  LDPC  Eb/N0=14.00 dB | frames=  1357 | BLER=2.2108e-01 | BER=2.2453e-02
+  LDPC  Eb/N0=14.50 dB | frames=  1612 | BLER=1.8610e-01 | BER=1.8911e-02
+  LDPC  Eb/N0=15.00 dB | frames=  1682 | BLER=1.7836e-01 | BER=1.8644e-02
+  LDPC  Eb/N0=15.50 dB | frames=  2228 | BLER=1.3465e-01 | BER=1.3255e-02
+  LDPC  Eb/N0=16.00 dB | frames=  2459 | BLER=1.2200e-01 | BER=1.3484e-02
+  LDPC  Eb/N0=16.50 dB | frames=  2830 | BLER=1.0601e-01 | BER=1.1153e-02
+  LDPC  Eb/N0=17.00 dB | frames=  3088 | BLER=9.7150e-02 | BER=1.1577e-02
+  LDPC  Eb/N0=17.50 dB | frames=  3152 | BLER=9.5178e-02 | BER=1.0038e-02
+  LDPC  Eb/N0=18.00 dB | frames=  3019 | BLER=9.9371e-02 | BER=1.0713e-02
+  LDPC  Eb/N0=18.50 dB | frames=  3960 | BLER=7.5758e-02 | BER=8.3570e-03
+  LDPC  Eb/N0=19.00 dB | frames=  3808 | BLER=7.8782e-02 | BER=9.8354e-03
+  LDPC  Eb/N0=19.50 dB | frames=  3964 | BLER=7.5681e-02 | BER=8.5535e-03
+  LDPC  Eb/N0=20.00 dB | frames=  4211 | BLER=7.1242e-02 | BER=7.4581e-03
+
+========== [Mode 4/5] Polar Fixed-SCL (L=8) ==========
+  polar_ca_scl  Eb/N0= 8.00 dB | frames=   343 | BLER=8.7464e-01 | BER=3.8252e-01
+  polar_ca_scl  Eb/N0= 8.50 dB | frames=   399 | BLER=7.5188e-01 | BER=3.1297e-01
+  polar_ca_scl  Eb/N0= 9.00 dB | frames=   492 | BLER=6.0976e-01 | BER=2.6159e-01
+  polar_ca_scl  Eb/N0= 9.50 dB | frames=   571 | BLER=5.2539e-01 | BER=2.1541e-01
+  polar_ca_scl  Eb/N0=10.00 dB | frames=   698 | BLER=4.2980e-01 | BER=1.7570e-01
+  polar_ca_scl  Eb/N0=10.50 dB | frames=   801 | BLER=3.7453e-01 | BER=1.4737e-01
+  polar_ca_scl  Eb/N0=11.00 dB | frames=   860 | BLER=3.4884e-01 | BER=1.3646e-01
+  polar_ca_scl  Eb/N0=11.50 dB | frames=  1284 | BLER=2.3364e-01 | BER=9.1377e-02
+  polar_ca_scl  Eb/N0=12.00 dB | frames=  1426 | BLER=2.1038e-01 | BER=8.2552e-02
+  polar_ca_scl  Eb/N0=12.50 dB | frames=  1748 | BLER=1.7162e-01 | BER=6.6925e-02
+  polar_ca_scl  Eb/N0=13.00 dB | frames=  1982 | BLER=1.5136e-01 | BER=5.9796e-02
+  polar_ca_scl  Eb/N0=13.50 dB | frames=  2280 | BLER=1.3158e-01 | BER=5.2419e-02
+  polar_ca_scl  Eb/N0=14.00 dB | frames=  2837 | BLER=1.0575e-01 | BER=4.1681e-02
+  polar_ca_scl  Eb/N0=14.50 dB | frames=  3430 | BLER=8.7464e-02 | BER=3.4402e-02
+  polar_ca_scl  Eb/N0=15.00 dB | frames=  3666 | BLER=8.1833e-02 | BER=3.2848e-02
+  polar_ca_scl  Eb/N0=15.50 dB | frames=  4242 | BLER=7.0721e-02 | BER=2.9033e-02
+  polar_ca_scl  Eb/N0=16.00 dB | frames=  5094 | BLER=5.8893e-02 | BER=2.3152e-02
+  polar_ca_scl  Eb/N0=16.50 dB | frames=  5083 | BLER=5.9020e-02 | BER=2.4263e-02
+  polar_ca_scl  Eb/N0=17.00 dB | frames=  5779 | BLER=5.1912e-02 | BER=2.1184e-02
+  polar_ca_scl  Eb/N0=17.50 dB | frames=  6412 | BLER=4.6787e-02 | BER=1.9044e-02
+  polar_ca_scl  Eb/N0=18.00 dB | frames=  6245 | BLER=4.8038e-02 | BER=1.9486e-02
+  polar_ca_scl  Eb/N0=18.50 dB | frames=  6962 | BLER=4.3091e-02 | BER=1.7043e-02
+  polar_ca_scl  Eb/N0=19.00 dB | frames=  7485 | BLER=4.0080e-02 | BER=1.6272e-02
+  polar_ca_scl  Eb/N0=19.50 dB | frames=  7058 | BLER=4.2505e-02 | BER=1.7768e-02
+  polar_ca_scl  Eb/N0=20.00 dB | frames=  7669 | BLER=3.9119e-02 | BER=1.6169e-02
+
+========== [Mode 5/5] Polar Adaptive-SCL (L0=4->8) ==========
+  polar_ca_scl  Eb/N0= 8.00 dB | frames=   351 | BLER=8.5470e-01 | BER=3.8168e-01
+  polar_ca_scl  Eb/N0= 8.50 dB | frames=   409 | BLER=7.3350e-01 | BER=3.2480e-01
+  polar_ca_scl  Eb/N0= 9.00 dB | frames=   473 | BLER=6.3425e-01 | BER=2.6979e-01
+  polar_ca_scl  Eb/N0= 9.50 dB | frames=   543 | BLER=5.5249e-01 | BER=2.3213e-01
+  polar_ca_scl  Eb/N0=10.00 dB | frames=   643 | BLER=4.6656e-01 | BER=1.9258e-01
+  polar_ca_scl  Eb/N0=10.50 dB | frames=   786 | BLER=3.8168e-01 | BER=1.5396e-01
+  polar_ca_scl  Eb/N0=11.00 dB | frames=   985 | BLER=3.0457e-01 | BER=1.1878e-01
+  polar_ca_scl  Eb/N0=11.50 dB | frames=  1122 | BLER=2.6738e-01 | BER=1.0765e-01
+  polar_ca_scl  Eb/N0=12.00 dB | frames=  1455 | BLER=2.0619e-01 | BER=8.1680e-02
+  polar_ca_scl  Eb/N0=12.50 dB | frames=  1640 | BLER=1.8293e-01 | BER=7.0351e-02
+  polar_ca_scl  Eb/N0=13.00 dB | frames=  1845 | BLER=1.6260e-01 | BER=6.3084e-02
+  polar_ca_scl  Eb/N0=13.50 dB | frames=  2360 | BLER=1.2712e-01 | BER=4.7120e-02
+  polar_ca_scl  Eb/N0=14.00 dB | frames=  2879 | BLER=1.0420e-01 | BER=4.1019e-02
+  polar_ca_scl  Eb/N0=14.50 dB | frames=  3467 | BLER=8.6530e-02 | BER=3.4576e-02
+  polar_ca_scl  Eb/N0=15.00 dB | frames=  3881 | BLER=7.7300e-02 | BER=3.1290e-02
+  polar_ca_scl  Eb/N0=15.50 dB | frames=  4132 | BLER=7.2604e-02 | BER=2.9450e-02
+  polar_ca_scl  Eb/N0=16.00 dB | frames=  4947 | BLER=6.0643e-02 | BER=2.4684e-02
+  polar_ca_scl  Eb/N0=16.50 dB | frames=  5211 | BLER=5.7571e-02 | BER=2.3412e-02
+  polar_ca_scl  Eb/N0=17.00 dB | frames=  5744 | BLER=5.2228e-02 | BER=2.1482e-02
+  polar_ca_scl  Eb/N0=17.50 dB | frames=  6557 | BLER=4.5753e-02 | BER=1.8234e-02
+  polar_ca_scl  Eb/N0=18.00 dB | frames=  6584 | BLER=4.5565e-02 | BER=1.8677e-02
+  polar_ca_scl  Eb/N0=18.50 dB | frames=  6717 | BLER=4.4663e-02 | BER=1.7954e-02
+  polar_ca_scl  Eb/N0=19.00 dB | frames=  6706 | BLER=4.4736e-02 | BER=1.7927e-02
+  polar_ca_scl  Eb/N0=19.50 dB | frames=  7228 | BLER=4.1505e-02 | BER=1.6747e-02
+  polar_ca_scl  Eb/N0=20.00 dB | frames=  8068 | BLER=3.7184e-02 | BER=1.5431e-02
+
+[Phase 4] Computing Wilson 95% CI ...
+
+[Phase 5] Coding gain interpolation ...
+
+  Coding Gains vs Conv:
+                                BLER=1e-01  BLER=1e-02
+  Conv (Viterbi)                  +0.00 dB        N/A
+  Turbo (max-log-MAP)             +0.06 dB        N/A
+  LDPC (norm. min-sum)            -2.74 dB        N/A
+  Polar Fixed-SCL                 -0.06 dB        N/A
+  Polar Adaptive-SCL              -0.02 dB        N/A
+
+[Phase 6] Generating BLER figure ...
+  Saved: <repo>\data\fhbfsk_uwa\fhbfsk_uwa_5fec_bler_ci.png
+  Saved: <repo>\data\fhbfsk_uwa\fhbfsk_5fec_results.mat
+  Saved: <repo>\data\fhbfsk_uwa\fhbfsk_uwa_5fec_coding_gain.tex
+
+############################################################
+#  5-FEC FH-BFSK CAMPAIGN DONE (UWA)                       #
+############################################################
+diary off;

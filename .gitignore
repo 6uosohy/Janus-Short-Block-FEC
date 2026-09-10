@@ -1,0 +1,31 @@
+# LaTeX build artifacts
+*.aux
+*.log
+*.blg
+*.bbl
+*.out
+*.synctex.gz
+*.fdb_latexmk
+*.fls
+*.toc
+
+# MATLAB
+*.asv
+*.m~
+slprj/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+.claude/
+
+# Local backups / scratch
+*.bak
+untitled.fig

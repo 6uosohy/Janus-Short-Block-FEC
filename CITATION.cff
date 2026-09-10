@@ -1,0 +1,47 @@
+cff-version: 1.2.0
+title: "Short-Block FEC Comparison for the JANUS Underwater Acoustic Standard"
+message: "If you use this code or data, please cite the paper below."
+type: software
+authors:
+  - family-names: Lee
+    given-names: Hyosong
+    affiliation: "Dept. of Information and Communication Eng., Hoseo University"
+  - family-names: Kim
+    given-names: Seunggyu
+    affiliation: "Dept. of Information and Communication Eng., Hoseo University"
+  - family-names: Park
+    given-names: Saeyong
+    affiliation: "Dept. of Information and Communication Eng., Hoseo University"
+  - family-names: Hong
+    given-names: Jaehee
+    affiliation: "Dept. of Information and Communication Eng., Hoseo University"
+  - family-names: Im
+    given-names: Taeho
+    affiliation: "Dept. of Information and Communication Eng., Hoseo University"
+license: GPL-3.0
+keywords:
+  - JANUS
+  - STANAG 4748
+  - underwater acoustic communication
+  - FH-BFSK
+  - forward error correction
+  - polar codes
+  - successive cancellation list decoding
+  - noncoherent detection
+  - short-packet communication
+preferred-citation:
+  type: conference-paper
+  title: "Comparative Analysis of Short-Block FEC Codes for the JANUS Underwater Communication Standard"
+  authors:
+    - family-names: Lee
+      given-names: Hyosong
+    - family-names: Kim
+      given-names: Seunggyu
+    - family-names: Park
+      given-names: Saeyong
+    - family-names: Hong
+      given-names: Jaehee
+    - family-names: Im
+      given-names: Taeho
+  collection-title: "OCEANS 2026 Monterey"
+  year: 2026
